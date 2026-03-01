@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cyber-cyan: #00f5ff;
+  --cyber-blue: #0066ff;
+  --cyber-purple: #7c3aed;
+  --dark-bg: #020818;
+  --navy: #040d2a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: #e2e8f0;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cyber-cyan);
+  border-radius: 3px;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(10, 20, 60, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 245, 255, 0.1);
+}
+
+.glass-strong {
+  background: rgba(4, 13, 42, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 245, 255, 0.15);
+}
+
+/* Neon text glow */
+.neon-text {
+  text-shadow:
+    0 0 10px rgba(0, 245, 255, 0.8),
+    0 0 30px rgba(0, 245, 255, 0.4),
+    0 0 80px rgba(0, 245, 255, 0.2);
+}
+
+.neon-text-purple {
+  text-shadow:
+    0 0 10px rgba(124, 58, 237, 0.8),
+    0 0 30px rgba(124, 58, 237, 0.4);
+}
+
+/* Neon border glow */
+.neon-border {
+  box-shadow:
+    0 0 5px rgba(0, 245, 255, 0.3),
+    0 0 20px rgba(0, 245, 255, 0.1),
+    inset 0 0 5px rgba(0, 245, 255, 0.05);
+}
+
+.neon-border-hover:hover {
+  box-shadow:
+    0 0 10px rgba(0, 245, 255, 0.6),
+    0 0 40px rgba(0, 245, 255, 0.3),
+    inset 0 0 10px rgba(0, 245, 255, 0.1);
+}
+
+/* Cyber grid background */
+.cyber-grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 245, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Button shine effect */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.5s;
+}
+.btn-shine:hover::before {
+  left: 100%;
+}
+
+/* Section divider line */
+.section-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,245,255,0.5), transparent);
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(1deg); }
+  66% { transform: translateY(-6px) rotate(-1deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Particle dot */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Accordion */
+details summary {
+  list-style: none;
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Range input */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--cyber-cyan);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,245,255,0.8);
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  background: rgba(0,245,255,0.2);
+  height: 4px;
+  border-radius: 2px;
+}
+
+/* Canvas cursor */
+canvas {
+  cursor: grab;
+}
+canvas:active {
+  cursor: grabbing;
+}
